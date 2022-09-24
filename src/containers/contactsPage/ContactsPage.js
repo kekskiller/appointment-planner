@@ -1,11 +1,11 @@
 /*
 ✓
 Requirements:
--> Receive two props:
-    - The current list of contacts
-    - A callback function for adding a new contact
+✓ Receive two props:
+    ✓ The current list of contacts
+    ✓ A callback function for adding a new contact
 -> Keep track of three local state values: the current name, phone, and email entered into the form
--> Check for duplicates whenever the name in the form changes and indicate the name is a duplicate
+-> Check for duplicates whenever the NAME in the form changes and indicate the name is a duplicate
 -> Only add a new contact on form submission if it does not duplicate an existing contact’s name
 -> A successful submission should clear the form
 -> In the Add Contact section, render a ContactForm with the following passed via props:
@@ -13,15 +13,34 @@ Requirements:
     - local state variable setter functions
     - handleSubmit callback function
 -> In the Contacts section, render a TileList with the contact array passed via props
+
+const found = arr.some(el => el.username === name);
 */
 
-import React from "react";
+import React, {useState} from "react";
+import { ContactForm } from "../../components/contactForm/ContactForm";
 
-export const ContactsPage = () => {
-  /*
-  Define state variables for 
-  contact info and duplicate check
-  */
+export const ContactsPage = (props) => {
+  const contactList = props.contacts; 
+  const addContact = props.addContact; 
+
+  /*  Define state variables for contact info and duplicate check */
+  const [name, setName] = useState();
+  const [phone, setPhone] = useState();
+  const [email, setEmail] = useState();
+
+  const [newContactInfo, setNewContactInfo] = useState(); //new object to add
+
+  const handleChange = (key, value) => {
+    alert('yay!')
+  }
+  
+  const isDuplicate = false;
+
+  const nameCheck =(value) => {
+
+
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault(); 
@@ -44,6 +63,11 @@ export const ContactsPage = () => {
       <hr />
       <section>
         <h2>Contacts</h2>
+        Contact Form goes here!
+        <ContactForm 
+          handleChange={handleChange} 
+          handleSubmit={handleSubmit}
+        />
       </section>
     </div>
   );

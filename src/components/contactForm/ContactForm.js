@@ -10,16 +10,17 @@ Requirements:
 
 import React from "react";
 
-export const ContactForm = ({
-  name,
-  setName,
-  phone,
-  setPhone,
-  email,
-  setEmail,
-  handleSubmit
-}) => {
+export const ContactForm = (props) => {
+
+  const handleChange = props.handleChange;
+
   return (
-    ContactForm
+    <form>
+      <input type='text' name='name' onChange={handleChange}></input>
+      <input type='text' name='phone' onChange={handleChange}></input>
+      <input type ='text' name='email' onChange={handleChange}></input>
+      <input type='submit' value='Add' />
+
+    </form>
   );
 };
