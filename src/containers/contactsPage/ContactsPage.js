@@ -21,7 +21,7 @@ import React, {useState} from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 
 export const ContactsPage = (props) => {
-  const {contactList, addContact} = props; 
+  const {contacts, addContact} = props; 
 //  const addContact = props.addContact; 
 
   /*  Define state variables for contact info and duplicate check */
@@ -30,14 +30,16 @@ export const ContactsPage = (props) => {
   const [email, setEmail] = useState();
 
   const [newContactInfo, setNewContactInfo] = useState(); //new object to add
+  const isDuplicate = false;
 
   const handleChange = ({target}) => {
     const {name, value} = target;
-    
-    
+    const findDuplicate = contacts.some(element =>  element.name === target.value)
+
+    if(findDuplicate){alert('you were cloned!!')}
   }
   
-  const isDuplicate = false;
+
 
   const nameCheck =(value) => {
 
