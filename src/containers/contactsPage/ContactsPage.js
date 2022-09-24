@@ -5,7 +5,7 @@ Requirements:
     ✓ The current list of contacts
     ✓ A callback function for adding a new contact
 -> Keep track of three local state values: the current name, phone, and email entered into the form
--> Check for duplicates whenever the NAME in the form changes and indicate the name is a duplicate
+-> Check for duplicates whenever the NAME in the form changes and indicate the Name is a duplicate
 -> Only add a new contact on form submission if it does not duplicate an existing contact’s name
 -> A successful submission should clear the form
 -> In the Add Contact section, render a ContactForm with the following passed via props:
@@ -21,8 +21,8 @@ import React, {useState} from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 
 export const ContactsPage = (props) => {
-  const contactList = props.contacts; 
-  const addContact = props.addContact; 
+  const {contactList, addContact} = props; 
+//  const addContact = props.addContact; 
 
   /*  Define state variables for contact info and duplicate check */
   const [name, setName] = useState();
@@ -31,8 +31,10 @@ export const ContactsPage = (props) => {
 
   const [newContactInfo, setNewContactInfo] = useState(); //new object to add
 
-  const handleChange = (key, value) => {
-    alert('yay!')
+  const handleChange = ({target}) => {
+    const {name, value} = target;
+    
+    
   }
   
   const isDuplicate = false;
