@@ -34,7 +34,7 @@ function App() {
 
   const addContact = (newContact) => {
     setContacts((prev) => {
-      return [newContact, ...prev]
+      return [...prev, newContact]
     })
   }
 
