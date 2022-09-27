@@ -35,18 +35,16 @@ export const ContactsPage = (props) => {
 
   const nameCheck = (value) => {    
       const findDuplicate = contacts.some(element =>  element.name === value)  
-      alert('findDuplicate: '+ findDuplicate)
       return findDuplicate;
     }
 
   const handleSubmit = (e) => {
     e.preventDefault(); 
-    alert('duplicate? '+ duplicate)
     if(!duplicate) {
       addContact(newContact);
       setNewContact(emptyContact); 
       e.target.reset();
-    }
+    }else{alert ('This weirdo already exists!')}
   };
 
   return (
@@ -60,6 +58,7 @@ export const ContactsPage = (props) => {
         <ContactForm 
           handleChange={handleChange} 
           handleSubmit={handleSubmit}
+          duplicate={duplicate}
         />
       </section>
     </div>
