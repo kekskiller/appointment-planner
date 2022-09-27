@@ -1,18 +1,18 @@
 /*
-✓ is stateless
+✔ is stateless
 Requirements:
--> Render a form with:
-    - The onSubmit attribute set to the callback function passed in via props
-    - 3 controlled input components, to be used for the title, date and time appointment data
+✔ Render a form with:
+    ✔ The onSubmit attribute set to the callback function passed in via props
+    ✔ 3 controlled input components, to be used for the title, date and time appointment data
     - A ContactPicker component with the contacts list passed in via props
-    - A submit button
--> Use getTodayString() to set the min attribute of the date input
+    ✔ A submit button
+✔ Use getTodayString() to set the min attribute of the date input
 */
 
 import React from "react";
 
 export const AppointmentForm = (props) => {
-  const {handleSubmit} = props;
+  const {handleSubmit, handleChange} = props;
 
 
   const getTodayString = () => {
@@ -25,37 +25,47 @@ export const AppointmentForm = (props) => {
   return (
     
     <form onSubmit={handleSubmit}>
-
-      <label for='name'>Title</label> 
+      <label for='title'>Title</label> 
       <input type='text' 
-        name='name'
-        placeholder='Name' 
-        required />
+        name='title'
+        placeholder='Please Choose Title' 
+        required 
+        onChange ={handleChange}
+        />
 
-      <label for='phone'>Contact</label> 
-      <input 
-        type='tel' 
-        name='phone'
+      <label for='contact'>Contact</label> 
+      <select 
+        type='text' 
+        name='contact'
         placeholder='Phone Number 000-0000' 
         pattern="[0-9]+-[0-9]+" 
-        required />
-      
-      <label for='email'>Date</label> 
+        required 
+        onChange = {handleChange}
+      >
+        <option value="">- - - </option>
+        <option value="John Doe">John Doe</option>
+        <option value="Jane Doe">Jane Doe</option>
+      </select>
+             
+      <label for='date'>Date</label> 
       <input 
-        type ='email' 
-        name='email'  
-        placeholder='email@mail.com'  
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-        required /> 
+        type ='date' 
+        id='date'  
+        name='date'
+        min={getTodayString()}  
+        required 
+        onChange ={handleChange}
+        /> 
         
 
-      <label for='email'>Time</label> 
+      <label for='time'>Time</label> 
       <input 
-        type ='email' 
-        name='email'  
-        placeholder='email@mail.com'  
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-        required />
+        type ='time' 
+        name='time'  
+        placeholder=''  
+        required 
+        onChange ={handleChange}
+        />
 
       <input type='submit' value='Add' />
 
