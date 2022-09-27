@@ -11,18 +11,10 @@ Requirements:
 
 import React from "react";
 
-export const AppointmentForm = ({
-  contacts,
-  title,
-  setTitle,
-  contact,
-  setContact,
-  date,
-  setDate,
-  time,
-  setTime,
-  handleSubmit
-}) => {
+export const AppointmentForm = (props) => {
+  const {handleSubmit} = props;
+
+
   const getTodayString = () => {
     const [month, day, year] = new Date()
       .toLocaleDateString("en-US")
@@ -31,6 +23,42 @@ export const AppointmentForm = ({
   };
 
   return (
-    AppointmentForm
+    
+    <form onSubmit={handleSubmit}>
+
+      <label for='name'>Title</label> 
+      <input type='text' 
+        name='name'
+        placeholder='Name' 
+        required />
+
+      <label for='phone'>Contact</label> 
+      <input 
+        type='tel' 
+        name='phone'
+        placeholder='Phone Number 000-0000' 
+        pattern="[0-9]+-[0-9]+" 
+        required />
+      
+      <label for='email'>Date</label> 
+      <input 
+        type ='email' 
+        name='email'  
+        placeholder='email@mail.com'  
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        required /> 
+        
+
+      <label for='email'>Time</label> 
+      <input 
+        type ='email' 
+        name='email'  
+        placeholder='email@mail.com'  
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        required />
+
+      <input type='submit' value='Add' />
+
+    </form>
   );
 };

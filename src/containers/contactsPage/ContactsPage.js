@@ -3,7 +3,7 @@ Requirements:
 ✔ Receive two props:
     ✔ The current list of contacts
     ✔ A callback function for adding a new contact
-✘ Keep track of three local state values: the current name, phone, and email entered into the form
+✘ Keep track of three local state values: the current name, phone, and email entered into the form --> is one object
 ✔ Check for duplicates whenever the NAME in the form changes and indicate the Name is a duplicate
 ✔ Only add a new contact on form submission if it does not duplicate an existing contact’s name
 ✔ A successful submission should clear the form
