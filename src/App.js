@@ -21,11 +21,15 @@ function App() {
     {name: 'Sam', phone: '09123/456789', email:'sam@gmail.com' }, 
     {name: 'Max', phone: '0176/123456', email: 'max@gmail.com'}, 
     {name: 'Jason', phone: '0911/666777', email: 'jason@hell.es'}
+  ]
 
+  const initialAppointments= [
+    {title:'Happy Easter', contact:'Bunny Easter', date:'13.04.2023', time:'09:00'},
+    {title:'Happy Christman', contact:'Claus Santa', date:'24.12.2022', time:'09:00'}
   ]
 
   const [contacts, setContacts] = useState(initialContacts); //name, phone number, email
-  const [appointments, setAppointments] = useState(); //title, contact, date, time
+  const [appointments, setAppointments] = useState(initialAppointments); //title, contact, date, time
 
   const ROUTES = {
     CONTACTS: "/contacts",
