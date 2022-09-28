@@ -1,22 +1,6 @@
-/*
-✔ is stateful
-Requirements:
-✔ Receive three props:
-  ✔- The current list of appointments
-  ✔- The current list of contacts
-  ✔- A callback function for adding a new appointment
-✘ Keep track of four local state variables, the current title, contact, date, and time entered into the form --> is one object
-✔ Add a new appointment on form submission
-✔ Clear the form on submission
-✔ In the Add Appointment section, render an AppointmentForm with the following passed via props:
-    ✔ local state variables
-    ✔ local state variable setter functions
-    ✔ handleSubmit callback function
--> In the Appointments section, render a TileList with the appointment array passed via props
-*/
-
 import React, {useState} from "react";
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
+import { TileList } from "../../components/tileList/TileList";
 
 export const AppointmentsPage = (props) => {
   const {contacts, appointments, addAppointment} = props;
@@ -47,7 +31,13 @@ export const AppointmentsPage = (props) => {
         <AppointmentForm 
           handleSubmit={handleSubmit}
           handleChange={handleChange}
+          contacts={contacts}
         />
+        
+        <TileList 
+          list={appointments}
+        />
+
       </section>
     </div>
   );
