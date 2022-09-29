@@ -24,19 +24,18 @@ export const AppointmentsPage = (props) => {
     <div>
       <section>
         <h2>Add Appointment</h2>
-      </section>
-      <hr />
-      <section>
-        <h2>Appointments</h2>
         <AppointmentForm 
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           contacts={contacts}
         />
-        
-        <TileList 
-          list={appointments}
-        />
+      </section>
+      <hr />
+      <section>
+        <h2>Appointments</h2>
+          <TileList 
+            list={appointments}
+          />
 
       </section>
     </div>

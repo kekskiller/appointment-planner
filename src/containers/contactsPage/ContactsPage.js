@@ -34,15 +34,16 @@ export const ContactsPage = (props) => {
     <div>
       <section>
         <h2>Add Contact</h2> 
-      </section>
-      <hr />
-      <section>
-        <h2>Contacts</h2>
         <ContactForm 
           handleChange={handleChange} 
           handleSubmit={handleSubmit}
           duplicate={duplicate}
         />
+      </section>
+      <hr />
+      <section>
+        <h2>Contacts</h2>
+        
         <TileList 
           list={contacts}
         />

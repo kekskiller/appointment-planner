@@ -5,7 +5,7 @@ export const TileList = (props) => {
   const {list} = props;
 
   return (
-    <div>
+    <div className="all-tiles">
       {list.map((tile, index) => (
         <Tile key={index} tile={tile} />
       ))}
