@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import { Switch, Route, Redirect, NavLink } from "react-router-dom";
+import { ThemeSwitch } from "./components/themeSwitch/ThemeSwitch";
 
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
+import "./app.css";
 
 function App() {
 
@@ -36,7 +38,7 @@ function App() {
       return [newAppointment, ...prev]
     })
   }
-  
+
   return (
     <>
       <h1>Appointment Planner</h1>
@@ -68,6 +70,9 @@ function App() {
           </Route>
         </Switch>
       </main>
+      <footer>
+        <ThemeSwitch />
+      </footer>
     </>
   );
 }

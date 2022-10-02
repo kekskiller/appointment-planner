@@ -1,0 +1,53 @@
+
+
+.toggle input {
+    display: none;
+}
+
+.roundbutton {
+    
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 3rem;
+    background-color: var(--accent-color);
+    display: block;
+    transition: all 0.3s;
+    border-radius: 3.4rem;
+    cursor: pointer;
+    padding:5px;
+    margin:0px 10px;
+}
+.picktheme{
+    color:white;
+    margin-top: 2rem;
+}
+.roundbutton:before {
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100%;
+    display: block;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    background-color: white;
+    transition: all 0.3s;
+}
+.outertheme{ 
+    color:white; 
+    display: inline-flex; 
+    padding:10px 0px;
+
+}
+.themes {
+    margin: 0px 10px;
+    padding: 7px 0px;
+}
+input:checked + .roundbutton {
+    background-color: var(--accent-color, red);
+}
+
+input:checked + .roundbutton:before  {
+    transform: translate(1.5rem, 0);
+}
