@@ -1,0 +1,142 @@
+html  {
+    height:100%;
+  }
+  
+  #root {
+/*     --bg: #0b222b; 
+    --accent-color: #3f8099;    */
+    height:100%;
+    padding: 30px;
+    font-family: "Open Sans", sans-serif;
+    background-blend-mode: darken;
+    background-position: top left;
+    background-size: cover;  
+  }
+  
+  #root[data-theme="flower-theme"] {
+    --bg: #00000050 url("./assets/nathan-dumlao-LPRrEJU2GbQ-unsplash.jpg") no-repeat;
+    --accent-color:#774057;
+  }
+  
+  #root[data-theme="fractal-theme"] {
+    --bg: #00000050 url("./assets/fractal-1280084_1920.jpg") no-repeat;
+    --accent-color:#75502e;
+  }
+  
+  #root{
+    background: var(--bg);
+  }
+  
+  nav > a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff; /* THIS */
+    margin-right: 30.5px;
+    text-decoration-line: none;
+  
+  }
+  
+  nav > a.active {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  nav {
+    font-variant: small-caps;
+    padding: 5px;
+    margin-bottom: 40px;
+    background-color:var(--accent-color); /* THIS */
+    text-align: center;
+    vertical-align: middle;
+  
+  }
+  h1{
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-bottom: 30px;
+    font-variant: small-caps;
+  }
+  
+  h2 {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  section {
+    background-color: #ffffff00
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #979797;
+    margin: 20px 0;
+  }
+  form{
+    background-color: #ffffff90;
+    vertical-align: middle;
+    padding: 20px 50px;
+  }
+  
+  input[type="submit"] {
+    background: var(--accent-color);  /* THIS */
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    cursor: pointer;
+  }
+  
+  input,
+  select {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    background: #ffffff;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    padding: 7px 9.5px 9px 9.5px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .tile {
+    margin: 0;
+    font-size: 14px;
+    margin-bottom: 4px;
+  
+  }
+  
+  .tile.tile-title {
+    font-weight: bold;
+  }
+  
+  .tile-container {
+    background: #ffffff;
+    min-width: 10em;
+    padding: 10px;
+    border: 3px solid var(--accent-color); 
+  
+  }
+  
+  .all-tiles{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px;
+  }

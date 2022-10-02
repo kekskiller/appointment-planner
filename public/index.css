@@ -1,23 +1,37 @@
-html  {
+/* html  {
   height:100%;
 }
 
 #root {
+  --bg: #0b222b; 
+  --accent-color: #3f8099;   
   height:100%;
   padding: 30px;
   font-family: "Open Sans", sans-serif;
-  background: #00000050 url(./nathan-dumlao-LPRrEJU2GbQ-unsplash.jpg) no-repeat;
   background-blend-mode: darken;
   background-position: top left;
-  background-size: cover;
-  
+  background-size: cover;  
+}
+
+#root[data-theme="flower-theme"] {
+  --bg: #00000050 url(./nathan-dumlao-LPRrEJU2GbQ-unsplash.jpg) no-repeat;
+  --accent-color:#774057;
+}
+
+#root[data-theme="fractal-theme"] {
+  --bg: #00000050 url(./fractal-1280084_1920.jpg) no-repeat;
+  --accent-color:#75502e;
+}
+
+#root{
+  background: var(--bg);
 }
 
 nav > a {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  color: #fff;
+  color: #fff; 
   margin-right: 30.5px;
   text-decoration-line: none;
 
@@ -33,7 +47,7 @@ nav {
   font-variant: small-caps;
   padding: 5px;
   margin-bottom: 40px;
-  background-color:#774057;
+  background-color:var(--accent-color); 
   text-align: center;
   vertical-align: middle;
 
@@ -72,7 +86,7 @@ form{
 }
 
 input[type="submit"] {
-  background: #774057;
+  background: var(--accent-color);  
   border-radius: 4px;
   color: #ffffff;
   font-weight: bold;
@@ -105,6 +119,7 @@ select {
   margin: 0;
   font-size: 14px;
   margin-bottom: 4px;
+
 }
 
 .tile.tile-title {
@@ -115,6 +130,8 @@ select {
   background: #ffffff;
   min-width: 10em;
   padding: 10px;
+  border: 3px solid var(--accent-color); 
+
 }
 
 .all-tiles{
@@ -122,4 +139,4 @@ select {
   flex-wrap: wrap;
   justify-content: left;
   gap: 10px;
-}
+} */
