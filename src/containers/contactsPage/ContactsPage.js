@@ -3,7 +3,7 @@ import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
 export const ContactsPage = (props) => {
-  const {contacts, addContact} = props; 
+  const {contacts, addContact, deleteMe, saveContact} = props; 
 
   const emptyContact={name:'', phone:'', email:''}
   const [newContact, setNewContact] = useState(emptyContact); 
@@ -37,7 +37,9 @@ export const ContactsPage = (props) => {
         <ContactForm 
           handleChange={handleChange} 
           handleSubmit={handleSubmit}
+          newContact={newContact}
           duplicate={duplicate}
+          isEdit={false}
         />
       </section>
       <hr />
@@ -45,7 +47,10 @@ export const ContactsPage = (props) => {
         <h2>Contacts</h2>
         
         <TileList 
-          list={contacts}
+          deleteMe={deleteMe}
+          toTile={contacts}
+          contacts={contacts}
+          saveContact={saveContact}
         />
       </section>
     </div>

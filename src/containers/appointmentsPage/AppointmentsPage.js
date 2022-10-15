@@ -3,13 +3,14 @@ import { AppointmentForm } from "../../components/appointmentForm/AppointmentFor
 import { TileList } from "../../components/tileList/TileList";
 
 export const AppointmentsPage = (props) => {
-  const {contacts, appointments, addAppointment} = props;
+  const {deleteMe, addAppointment, appointments, contacts, saveAppointment} = props;
 
   const emptyAppointment={title:'', contact:'', date:'', time:''}
   const [newAppointment, setNewAppointment] = useState(emptyAppointment);
 
   const handleChange = ({target}) => {
     const {name, value} = target;
+    
     setNewAppointment((prev) => ({...prev, [name]:value}));
   }
 
@@ -27,14 +28,20 @@ export const AppointmentsPage = (props) => {
         <AppointmentForm 
           handleSubmit={handleSubmit}
           handleChange={handleChange}
+          newAppointment= {newAppointment}
           contacts={contacts}
+          isEdit={false}
+          
         />
       </section>
       <hr />
       <section>
         <h2>Appointments</h2>
           <TileList 
-            list={appointments}
+            deleteMe={deleteMe}
+            toTile={appointments}
+            contacts={contacts}
+            saveAppointment={saveAppointment}
           />
 
       </section>

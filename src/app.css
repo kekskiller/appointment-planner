@@ -20,7 +20,7 @@ html  {
   
   #root[data-theme="fractal-theme"] {
     --bg: #00000050 url("./assets/fractal-1280084_1920.jpg") no-repeat;
-    --accent-color:#75502e;
+    --accent-color:#916f50;
   }
   
   #root{
@@ -84,10 +84,9 @@ html  {
     vertical-align: middle;
     padding: 20px 50px;
   }
-  
-  input[type="submit"] {
+   
+  input[type="submit"], button {
     background: var(--accent-color);  /* THIS */
-    border-radius: 4px;
     color: #ffffff;
     font-weight: bold;
     font-size: 14px;
@@ -107,7 +106,6 @@ html  {
     font-size: 16px;
     background: #ffffff;
     border: 1px solid #979797;
-    border-radius: 4px;
     padding: 7px 9.5px 9px 9.5px;
     outline: none;
     width: 100%;
@@ -116,20 +114,24 @@ html  {
   }
   
   .tile {
+    position:relative;
     margin: 0;
     font-size: 14px;
-    margin-bottom: 4px;
-  
+    padding: 0em 0.5em 0.5em 0.5em;
   }
   
-  .tile.tile-title {
+  .tile-title {
+    position:relative;
     font-weight: bold;
+    margin-top:2em;
+    margin-bottom:1em;
+    padding: 0em 0.5em;
   }
   
   .tile-container {
+    position: relative;
     background: #ffffff;
     min-width: 10em;
-    padding: 10px;
     border: 3px solid var(--accent-color); 
   
   }
@@ -140,3 +142,76 @@ html  {
     justify-content: left;
     gap: 10px;
   }
+
+  footer{
+    text-align: center;
+  }
+
+.menu{
+  display: inline-block;
+  position:relative;
+  width: 100%;
+  height: 1.7em;
+  background-color: var(--accent-color);
+  color:#fff;
+  text-align: right;
+  z-index: 2;
+}
+.menubutton {
+  display: inline;
+  padding: 0em 0.3em;
+  width: 0.5em;
+  height: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  cursor:pointer;
+  border-radius:50%;
+}
+
+.dropdown{
+  position: absolute;
+  width:min-content;
+  right: 0px;
+  padding:5px 10px;
+  background-color: var(--accent-color);
+  border: 1px var(--accent-color) solid;
+  color: #fff;
+  z-index:2;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px black;
+}
+.dropdown div{
+  padding: 2px 0px;
+}
+
+.editscreen {
+  position: fixed;
+  background-color: #ffffff95;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  top: 0em;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.editscreen div{
+  width: 80%; 
+  height: 80%;
+  background-color: #fff;
+  border: 3px solid var(--accent-color);
+}
+
+.editscreen form div{
+  width:100%;
+  border:  0px;
+  display: inline-flex;
+  gap: 5%;
+}
+
+.editscreen div h1 {
+  color: #000;
+}

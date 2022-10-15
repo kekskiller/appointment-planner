@@ -18,11 +18,11 @@ export const ThemeSwitch = (props) => {
 
     return(
         <>
-            <div className="picktheme">Pick your theme:</div>
+            <div className="picktheme">Pick Your Theme</div>
             <div className="outertheme">
                 <div className="themes">Fractal </div>
                 
-                    <label for="themeToggle" class="toggle"> 
+                    <label htmlFor="themeToggle" className="toggle"> 
                         <input type="checkbox" id="themeToggle" onChange={handleThemeChange} />
                         <span className="roundbutton"></span>
                     </label>    
